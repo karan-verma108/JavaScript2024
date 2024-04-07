@@ -1,0 +1,1 @@
+console.log('welocome to JavaScript 2024');
