@@ -20,4 +20,15 @@ let num = 55;
 
 // but if we have something like this, then parseInt doesn't work as expected 
 let myStr = '43.6';
-console.log(parseFloat(myStr));         //then we use parseFloat
+// console.log(parseFloat(myStr));         //then we use parseFloat
+
+// let's check the type of this 
+console.log(typeof ('9' - 4));
+
+console.log('java' - 'script');
+
+// true = 1, false = 0
+console.log(true + true);
+console.log(true + false);
+console.log(false + false);
+console.log(false - true);
