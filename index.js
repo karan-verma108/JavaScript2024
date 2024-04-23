@@ -23,12 +23,17 @@ let myStr = '43.6';
 // console.log(parseFloat(myStr));         //then we use parseFloat
 
 // let's check the type of this 
-console.log(typeof ('9' - 4));
+// console.log(typeof ('9' - 4));
 
-console.log('java' - 'script');
+// console.log('java' - 'script');
 
 // true = 1, false = 0
-console.log(true + true);
-console.log(true + false);
-console.log(false + false);
-console.log(false - true);
+// console.log(true + true);
+// console.log(true + false);
+// console.log(false + false);
+// console.log(false - true);
+
+// what will be the output of this, 
+
+let result = 0.1 + 0.2;
+console.log(result.toFixed(1));
