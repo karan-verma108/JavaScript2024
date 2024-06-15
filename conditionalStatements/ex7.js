@@ -1,27 +1,39 @@
-let a = 5;
-let b = 54;
+//Program to find if number is an armstrong number
 
-// console.log(b.toString().length);
+const isArmstrong = (num) => {
+  const firstNumber = Number(num.toString()[0]);
+  const secondNumber = Number(num.toString()[1]);
+  const thirdNumber = Number(num.toString()[2]);
+  const fouthNumber = Number(num.toString()[3]);
 
-const findArmstrongNum = (num) => {
-  if (num <= 0) {
-    console.log('please enter number greater than 0');
-  }
-  if (
-    Math.pow(num.toString()[0], num.toString().length) +
-      Math.pow(num.toString()[1], num.toString().length) ===
+  if (num.toString().length === 1) {
+    return num;
+  } else if (num.toString().length === 2) {
+    return false;
+  } else if (
+    Math.pow(firstNumber, num.toString().length) +
+      Math.pow(secondNumber, num.toString().length) +
+      Math.pow(thirdNumber, num.toString().length) ===
     num
   ) {
-    console.log(`${num} is also an armstrong number`);
+    return num;
+  } else if (
+    Math.pow(firstNumber, num.toString().length) +
+      Math.pow(secondNumber, num.toString().length) +
+      Math.pow(thirdNumber, num.toString().length) +
+      Math.pow(fouthNumber, num.toString().length) ===
+    num
+  ) {
+    return num;
+  } else {
+    return false;
   }
 };
 
-findArmstrongNum(5);
+const result = isArmstrong(153);
 
-let n1 = 10;
-
-console.log(
-  Math.pow(n1.toString()[0], n1.toString().length) +
-    Math.pow(n1.toString()[1], n1.toString().length) ===
-    n1
-);
+if (typeof result === 'number') {
+  console.log(`${result} is an armstrong number`);
+} else {
+  console.log(`It's not an armstrong number`);
+}
