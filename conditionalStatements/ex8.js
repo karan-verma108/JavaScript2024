@@ -3,7 +3,7 @@
 const isPalindromeNumber = (num) => {
   num = num.toString();
   let arr = [];
-  for (let i = num.toString().length - 1; i >= 0; i--) {
+  for (let i = num.length - 1; i >= 0; i--) {
     arr.push(num[i]);
   }
   arr = Number(arr.join(''));
@@ -16,7 +16,7 @@ const isPalindromeNumber = (num) => {
   }
 };
 
-const result = isPalindromeNumber(121);
+const result = isPalindromeNumber(123);
 
 if (result) {
   console.log('it is a palindrome number');
