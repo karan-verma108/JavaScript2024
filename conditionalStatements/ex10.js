@@ -15,4 +15,5 @@ const calculateTemperature = (converter, temp) => {
 console.log(
   'Enter cToF to convert Celsius to Fahrenheit & enter fToC to convert Fahrenheit to Celsius'
 );
-const result = calculateTemperature('fToC', 107.6);
+
+calculateTemperature('fToC', 107.6);
