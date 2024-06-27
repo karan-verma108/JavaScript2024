@@ -24,3 +24,12 @@ let inputValue;
 //   positiveNumber = parseFloat(inputValue);
 // } while (isNaN(positiveNumber) || positiveNumber < 0);
 // console.log(`you entered a positive number ${positiveNumber}`);
+
+//sum of numbers from 1 to 10 using for loop
+
+let sum = 0;
+for (let i = 1; i <= 3; i++) {
+  sum += i;
+}
+
+console.log(sum);
