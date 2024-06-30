@@ -13,3 +13,12 @@
 //   }
 //   console.log(star);
 // }
+
+let star = '';
+for (let i = 8; i >= 1; i -= 2) {
+  for (let j = 1; j <= i; j++) {
+    star += '*';
+  }
+  console.log(star);
+  star = '';
+}
