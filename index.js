@@ -1,7 +1,7 @@
 // console.log('welocome to JavaScript 2024');
 
 //convert string to a number
-let str = "4";
+let str = '4';
 // console.log(typeof +str);             first way
 // console.log(typeof Number(str));       second way
 
@@ -18,11 +18,11 @@ let num = 55;
 // let myStr = '43';
 // console.log(typeof parseInt(myStr));
 
-// but if we have something like this, then parseInt doesn't work as expected 
+// but if we have something like this, then parseInt doesn't work as expected
 let myStr = '43.6';
 // console.log(parseFloat(myStr));         //then we use parseFloat
 
-// let's check the type of this 
+// let's check the type of this
 // console.log(typeof ('9' - 4));
 
 // console.log('java' - 'script');
@@ -33,7 +33,17 @@ let myStr = '43.6';
 // console.log(false + false);
 // console.log(false - true);
 
-// what will be the output of this, 
+// what will be the output of this,
 
-let result = 0.1 + 0.2;
-console.log(result.toFixed(1));
+// let result = 0.1 + 0.2;
+// console.log(result.toFixed(1));
+
+function a() {
+  ba();
+  function ba() {
+    console.log(b);
+  }
+}
+
+let b = 4;
+a();
