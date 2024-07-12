@@ -21,31 +21,42 @@
 // console.log('secondRemoved', secondRemoved);
 // console.log('New array without uniques values is', numArray);
 
-const numArray = [1, 3, 2, 4, 3, 6, 9, 4];
-const repatedValues = [];
-for (let i = 0; i < numArray.length; i++) {
-  for (let j = i + 1; j < numArray.length; j++) {
-    if (numArray[i] === numArray[j]) {
-      repatedValues.push(numArray[i]);
-    }
-  }
-}
+// const numArray = [1, 3, 2, 4, 3, 6, 9, 4];
+// const repatedValues = [];
+// for (let i = 0; i < numArray.length; i++) {
+//   for (let j = i + 1; j < numArray.length; j++) {
+//     if (numArray[i] === numArray[j]) {
+//       repatedValues.push(numArray[i]);
+//     }
+//   }
+// }
 
-console.log('repeatedValues', repatedValues);
-console.log('array before change', numArray);
-const [value1, value2] = repatedValues;
-// console.log(value1);
-// console.log(value2);
+// console.log('repeatedValues', repatedValues);
+// console.log('array before change', numArray);
+// const [value1, value2] = repatedValues;
+// // console.log(value1);
+// // console.log(value2);
 
-const firstIndexofValue1 = numArray.indexOf(value1);
-numArray.splice(firstIndexofValue1, 1);
-const lastIndexOfValue1 = numArray.lastIndexOf(value1);
-numArray.splice(lastIndexOfValue1, 1);
+// const firstIndexofValue1 = numArray.indexOf(value1);
+// numArray.splice(firstIndexofValue1, 1);
+// const lastIndexOfValue1 = numArray.lastIndexOf(value1);
+// numArray.splice(lastIndexOfValue1, 1);
 
-const firstIndexofValue2 = numArray.indexOf(value2);
-numArray.splice(firstIndexofValue2, 1);
+// const firstIndexofValue2 = numArray.indexOf(value2);
+// numArray.splice(firstIndexofValue2, 1);
 
-const lastIndexOfValue2 = numArray.lastIndexOf(value2);
-numArray.splice(lastIndexOfValue2, 1);
+// const lastIndexOfValue2 = numArray.lastIndexOf(value2);
+// numArray.splice(lastIndexOfValue2, 1);
 
-console.log('array after change', numArray);
+// console.log('array after change', numArray);
+
+// const findUniqueValues = (numArray) => {
+//   return numArray.filter(
+//     (currElement, index, arr) => arr.indexOf(currElement) === index
+//   );
+// };
+
+// const result = findUniqueValues([1, 2, 3, 4, 3, 7, 9, 2, 9, 9]);
+// console.log(result);
+
+console.log([...new Set([1, 2, 3, 4, 3, 7, 9, 2, 9, 9])]);
