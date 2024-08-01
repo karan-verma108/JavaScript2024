@@ -46,4 +46,42 @@ function a() {
 }
 
 let b = 4;
-a();
+// a();
+
+//find the maximum/greatest number in an array
+
+const maxNum = (numArr) => {
+  let maxVal = numArr[0];
+  //[2,4,9,4,0,99,1,43]
+
+  for (let i = 1; i <= numArr.length - 1; i++) {
+    if (maxVal > numArr[i]) {
+      maxVal = maxVal;
+    } else {
+      maxVal = numArr[i];
+    }
+  }
+  return maxVal;
+};
+
+const result = maxNum([2, 4, 9, 4, 0, 99, 1, 43]);
+// console.log(result);
+
+// reverse a string
+
+const reverseAString = (myStr) => {
+  let emptyArr = [];
+  for (let i = myStr.length - 1; i >= 0; i--) {
+    emptyArr.push(myStr[i]);
+  }
+  let reversedStr = emptyArr.join('');
+
+  if (reversedStr === myStr) {
+    return `It's a palindrom, myStr = ${myStr} and reveresed Str = ${reversedStr}`;
+  } else {
+    return `It's not a palindrom, myStr = ${myStr} and reveresed Str = ${reversedStr}`;
+  }
+};
+
+const result3 = reverseAString('maam');
+console.log(result3);
