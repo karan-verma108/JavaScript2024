@@ -41,4 +41,18 @@ const findFactorial = (num) => {
 };
 
 const result2 = findFactorial(5);
-console.log(result2);
+// console.log(result2);
+
+// find factorial using recursive function
+
+const findAnotherFactorial = (num) => {
+  if (num < 2) {
+    return 1;
+  }
+  return num * findAnotherFactorial(num - 1);
+};
+
+const newResult = findAnotherFactorial(5);
+// console.log(newResult);
+
+//decrement the count
