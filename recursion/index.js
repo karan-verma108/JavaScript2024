@@ -56,3 +56,16 @@ const newResult = findAnotherFactorial(5);
 // console.log(newResult);
 
 //decrement the count
+
+//Write a recursive function to reverse a given string.
+
+const reverseAString = (myStr) => {
+  if (myStr.length === 0) {
+    return 0;
+  }
+
+  let lastChar = myStr[myStr.length - 1];
+  let restChars = myStr.slice(-1);
+};
+
+reverseAString('helloe');

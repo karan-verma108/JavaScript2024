@@ -84,4 +84,12 @@ const reverseAString = (myStr) => {
 };
 
 const result3 = reverseAString('maam');
-console.log(result3);
+// console.log(result3);
+
+var a = 10;
+function x() {
+  var a = 20;
+  console.log(a);
+}
+x();
+console.log(a);
