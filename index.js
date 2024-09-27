@@ -89,7 +89,9 @@ const result3 = reverseAString('maam');
 var a = 10;
 function x() {
   var a = 20;
-  console.log(a);
+  // console.log(a);
 }
 x();
-console.log(a);
+// console.log(a);
+
+
