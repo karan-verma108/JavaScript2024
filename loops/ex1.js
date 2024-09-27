@@ -1,4 +1,4 @@
-// simple program to print first 10 numbers using different loops
+// simple program to print first 10 numbers using different loops in 2024 new method
 
 // for (let i = 1; i <= 10; i++) {
 //   console.log(i);
