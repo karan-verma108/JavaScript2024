@@ -26,4 +26,20 @@ myObj.greetings = function () {
   return `Hi coder, ${this.name}`; //remember that 'this' keyword can only be used with normal functions, not arraw functions
 };
 
-console.log(myObj.greetings());
+// console.log(myObj.greetings());
+
+const regularUser = {
+  email: 'regular@mail.com',
+  password: '123',
+  fullName: {
+    firstName: 'newUser',
+    lastName: 'oldest',
+  },
+};
+
+// console.log(regularUser['fullName']['firstName']); //using square braces
+// console.log(regularUser.fullName.firstName); //using the dot notation
+
+// lets look at hasOwnProperty() method of objects
+
+console.log(regularUser.hasOwnProperty('email')); //it checks if email property exists in the regularUser object
