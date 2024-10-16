@@ -42,4 +42,8 @@ const regularUser = {
 
 // lets look at hasOwnProperty() method of objects
 
-console.log(regularUser.hasOwnProperty('email')); //it checks if email property exists in the regularUser object
+// console.log(regularUser.hasOwnProperty('email')); //it checks if email property exists in the regularUser object
+
+const { email: myPersonalEmail, password: myPersonalPassword } = regularUser; //this is one way to give a different name to the destructed item
+console.log(myPersonalEmail);
+console.log(myPersonalPassword);
