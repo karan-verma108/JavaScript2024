@@ -20,4 +20,22 @@ const returnSecondValue = (numArr) => {
   return secondNum;
 };
 
-console.log(returnSecondValue(numberArr));
+// console.log(returnSecondValue(numberArr));
+
+console.log(addOne(5));
+
+function addOne(num) {
+  return num + 1;
+}
+
+// console.log(addTwo(4));  can't access addTwo before initialization
+
+const addTwo = function (num) {
+  return num + 2;
+};
+
+// addThree(9); //can't access addThree before initialization
+
+const addThree = (num) => {
+  return num + 3;
+};
