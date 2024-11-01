@@ -13,11 +13,11 @@ for (const [key, value] of myFirstMap) {
   //   console.log(value); //prints just the value
 }
 
-const numArr = [3, 9, 10, 4, 8];
-for (const [key, value] of numArr.entries()) {
-  //   console.log('key', key);
-  //   console.log('value', value);
-}
+// const numArr = [3, 9, 10, 4, 8];
+// for (const [key, value] of numArr.entries()) {
+//   //   console.log('key', key);
+//   //   console.log('value', value);
+// }
 
 const myObj = {
   name: 'yellowPurple',
@@ -46,7 +46,50 @@ for (const key in myObj) {
 const coding = ['js', 'ruby', 'python', 'swift'];
 
 const printMe = (item) => {
-  console.log(item);
+  // console.log(item);
 };
 
-coding.forEach(printMe);
+// coding.forEach(printMe);
+
+const numsArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// /1 first using filter method
+
+const filteredNums = numsArr.filter((num) => num > 4);
+
+// console.log('filtered nums are ', filteredNums);
+
+// 2 using forEach method
+
+// const newNums = [];
+
+// numsArr.forEach((num) => {
+//   if (num > 4) {
+//     newNums.push(num);
+//   }
+// });
+// console.log('filtered nums are ', newNums);
+
+const shoppingCart = [
+  {
+    itemName: 'js course',
+    price: 5999,
+  },
+  {
+    itemName: 'python course',
+    price: 3999,
+  },
+  {
+    itemName: 'react native course',
+    price: 8999,
+  },
+];
+
+//use reduce() to find the sum of all the course's prices
+
+const totalPrice = shoppingCart.reduce(
+  (acc, currVal) => acc + currVal.price,
+  0
+);
+
+console.log('total price is ', totalPrice);
