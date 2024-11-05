@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM elements</title>
+  </head>
+  <body style="background-color: black; color: white">
+    <ul>
+      <li>first li</li>
+      <li>second li</li>
+      <li>third li</li>
+    </ul>
+    <script>
+      const firstLi = document.querySelector('li:first-child');
+      console.log(firstLi);
+      firstLi.style.backgroundColor = 'green';
+      firstLi.style.color = 'blue';
+    </script>
+  </body>
+</html>
