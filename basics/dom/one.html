@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>new dom</title>
+  </head>
+  <body style="background-color: black; color: white">
+    <ul>
+      <li class="days">monday</li>
+      <li class="days">tuesday</li>
+      <li class="days">wednesday <span style="display: none"> hi </span></li>
+      <li class="days">thursday</li>
+    </ul>
+  </body>
+  <script>
+    const parent = document.querySelector('ul');
+    // console.log(parent.children); // print all the innerTexts of children using for loop
+    // for (const element of parent.children) {
+    //   console.log(element.textContent);
+    // }
+
+    //find child elements of a parent node
+
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+
+    //lets find the parent from child element
+
+    const firstChild = document.querySelector('.days');
+    console.log(firstChild.innerHTML);
+    console.log(firstChild.parentElement);
+    console.log(firstChild.nextElementSibling);
+  </script>
+</html>

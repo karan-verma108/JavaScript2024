@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>create a new element and append to the body</title>
+    <style>
+      .red {
+        color: red;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body></body>
+  <script>
+    const div = document.createElement('div');
+    div.innerText = 'Hi im a div tag';
+    div.setAttribute('class', 'red');
+    // const appendedNode = document.body.appendChild(div); //old method, returns the appended node
+    // console.log(appendedNode);
+
+    // const voidNode = document.body.append(
+    //   div,
+    //   'hi i can also come because it is a new method'
+    // ); //new method, does not return the appended node, returns void, can take multiple arguments
+    // console.log('void', voidNode);
+    const h1Tag = document.createElement('h1');
+    h1Tag.innerText = 'im a big h1 tag';
+    h1Tag.innerText = 'im a new big tag but i override my previous text'; //this overrides the previous text also
+    document.body.appendChild(h1Tag);
+
+    //lets try to add the text by first creating a text node and the using that text node
+    // const addText = document.createTextNode('hi im a text node');
+    // const addText2 = document.createTextNode(' hi im a text node 2');
+    // h1Tag.appendChild(addText);
+    // h1Tag.appendChild(addText2);
+    // document.body.appendChild(h1Tag); //so it doesnt override the previous text
+  </script>
+</html>
