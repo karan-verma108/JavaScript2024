@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Buttons</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body style="background-color: #222; color: #fff">
+    <h1 id="heading">Welcome to Dynamic Buttons</h1>
+    <h2>Enter details in below fields to create a button of your choice</h2>
+    <div class="parentContainer">
+      <form class="contentContainer">
+        <input
+          class="inputs"
+          type="text"
+          placeholder="background color"
+          id="bgColorInput"
+          name="bgColor"
+        />
+        <input
+          class="inputs"
+          type="text"
+          placeholder="text color"
+          id="textColor"
+          name="textColor"
+        />
+        <input
+          class="inputs"
+          type="text"
+          placeholder="button label"
+          id="buttonLabelInput"
+          name="buttonLabel"
+        />
+        <input
+          class="inputs"
+          type="text"
+          placeholder="padding"
+          id="btnPadding"
+          name="btnPadding"
+        />
+        <input
+          class="inputs"
+          type="text"
+          placeholder="border radius"
+          id="btnRadius"
+          name="btnRadius"
+        />
+        <button type="submit" id="createButton" class="btn">
+          Create New Button
+        </button>
+      </form>
+
+      <div class="buttonsContainer">
+        <h2>Your buttons will appear here !</h2>
+      </div>
+      <p id="errorMessage"></p>
+    </div>
+  </body>
+  <script src="./index.js"></script>
+</html>

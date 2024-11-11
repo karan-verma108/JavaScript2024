@@ -1,0 +1,28 @@
+.btn {
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+  border: none;
+  font-size: 0.8rem;
+}
+.inputs {
+  padding: 0.4rem;
+  border-radius: 0.3rem;
+  border: none;
+}
+.parentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.buttonsContainer {
+  border: 1px solid white;
+}
