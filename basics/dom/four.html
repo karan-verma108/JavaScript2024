@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #222; color: #fff">
+    <ul class="language">
+      <li>javascript</li>
+      <li>python</li>
+      <li>go</li>
+    </ul>
+  </body>
+  <script>
+    //adding a new element
+    const language = document.querySelector('.language');
+    const addNewLi = (listText) => {
+      const newLi = document.createElement('li');
+      const textNode = document.createTextNode(listText);
+      newLi.appendChild(textNode);
+      language.appendChild(newLi);
+    };
+
+    addNewLi('typescript');
+    addNewLi('c++');
+
+    //editing or replacing an existing element with a new one
+
+    // const goLi = document.querySelector('li:nth-child(3)');
+    // const cSharpLi = document.createElement('li');
+    // const newText = document.createTextNode('c sharp');
+    // cSharpLi.appendChild(newText);
+    // goLi.replaceWith(cSharpLi);
+
+    //using a function
+
+    const replaceListItem = (replacementText, liPosition) => {
+      const targetLi = document.querySelector(`li:nth-child(${liPosition})`);
+      const newLi = document.createElement('li');
+      const newText = document.createTextNode(replacementText);
+      newLi.appendChild(newText);
+      targetLi.replaceWith(newLi);
+    };
+    replaceListItem('ruby', 2);
+
+    //remove one item
+
+    const rubyLi = document.querySelector('li:nth-child(2)');
+    language.removeChild(rubyLi);
+    const javascriptLi = document.querySelector('li:first-child');
+    javascriptLi.remove();
+  </script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #222; color: #fff">
+    <ul id="ulList">
+      <li>javascript</li>
+    </ul>
+
+    <form>
+      <input type="text" placeholder="enter new item" id="input" name="input" />
+
+      <button type="submit" id="addListBtn">Add new item</button>
+    </form>
+  </body>
+  <script>
+    const addListBtn = document.getElementById('addListBtn');
+    const ulList = document.getElementById('ulList');
+    const inputElement = document.getElementById('input');
+
+    addListBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const input = inputElement.value;
+      const newLi = document.createElement('li');
+      newLi.innerText = input;
+      ulList.appendChild(newLi);
+      inputElement.value = '';
+    });
+  </script>
+</html>
