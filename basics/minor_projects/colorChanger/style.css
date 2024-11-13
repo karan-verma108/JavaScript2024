@@ -1,0 +1,24 @@
+button:first-child {
+  background-color: yellow;
+}
+button:nth-child(2) {
+  background-color: pink;
+}
+button:nth-child(3) {
+  background-color: red;
+}
+button:last-child {
+  background-color: black;
+}
+
+.btn {
+  height: 7rem;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.btnContainer {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+}
