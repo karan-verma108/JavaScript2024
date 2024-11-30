@@ -1,15 +1,16 @@
 const form = document.querySelector('form');
 const enteredNumRef = document.getElementById('enteredNum');
 const btn = document.getElementById('btn');
-
+const randomNum = Math.floor(Math.random() * 100) + 1;
 let totalGuess = 10;
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const remainingGuesses = document.getElementById('remainingGuesses');
   const previousGuesses = document.getElementById('previousGuesses');
   const enteredNum = parseInt(document.getElementById('enteredNum').value);
   const result = document.getElementById('result');
-  const randomNum = Math.floor(Math.random() * 10) + 1;
+  console.log('random', randomNum);
 
   enteredNumRef.value = '';
 

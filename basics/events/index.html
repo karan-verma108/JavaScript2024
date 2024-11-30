@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events in html</title>
+    <style>
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+      li {
+        width: 10%;
+        height: 10%;
+        list-style-type: none;
+        cursor: pointer;
+      }
+      li > img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .hidden {
+        display: none;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+      }
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <button id="btn" type="button" onclick="alert('Button is clicked')">
+      Click me
+    </button> -->
+
+    <h1>Click Anywhere</h1>
+
+    <!-- <ul class="imagesList">
+      <li>
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/1191/1191594.png"
+          alt="duck"
+          id="duck"
+        />
+      </li>
+      <li>
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/4669/4669482.png"
+          alt="car"
+          id="car"
+        />
+      </li>
+      <li>
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/6530/6530876.png"
+          alt="girl"
+          id="girl"
+        />
+      </li>
+      <li>
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/8876/8876610.png"
+          alt="lion"
+          id="lion"
+        />
+      </li>
+    </ul>
+    <a href="https://www.google.co.in/" id="google" target="_blank"
+      >go to google</a
+    > -->
+  </body>
+  <script>
+    // const imagesList = document.querySelector('.imagesList');
+    // imagesList.addEventListener(
+    //   'click',
+    //   (e) => {
+    //     e.stopPropagation();
+    //     imagesList.setAttribute('class', 'hidden');
+    //   },
+    //   false
+    // );
+
+    // const girl = document.getElementById('girl');
+    // girl.addEventListener(
+    //   'click',
+    //   () => {
+    //     console.log('girl is clicked');
+    //   },
+    //   true //by default the third paramter is false (false equals event bubling and true equals event capturing)
+    // );
+
+    // document.getElementById('google').addEventListener('click', (e) => {
+    //   console.log('click is working');
+    //   e.preventDefault(); //to prevent the default behavior of anchor tags
+    // });
+
+    const body = document.body;
+    body.addEventListener('click', (e) => {
+      e.stopPropagation();
+      console.log('clicked on body e', e);
+      console.log('clint x', e.pageX);
+
+      const newElement = document.createElement('div');
+      newElement.style.position = 'absolute';
+      newElement.style.top = `${e.pageY}px`;
+      newElement.style.left = `${e.pageX}px`;
+      newElement.style.width = `${Math.floor(Math.random() * 20) + 1}rem`;
+      newElement.style.height = `${Math.floor(Math.random() * 20) + 1}rem`;
+      newElement.style.border = '2px solid black';
+      newElement.style.borderRadius = `${
+        Math.floor(Math.random() * 10) + 1
+      }rem`;
+      newElement.style.backgroundColor = `rgb(${
+        Math.floor(Math.random() * 300) + 1
+      },${Math.floor(Math.random() * 600) + 1},${
+        Math.floor(Math.random() * 900) + 1
+      })`;
+
+      document.body.appendChild(newElement);
+    });
+  </script>
+</html>
