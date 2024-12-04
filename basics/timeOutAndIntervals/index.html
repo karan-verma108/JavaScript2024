@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set timeout and set intervals</title>
+  </head>
+  <body>
+    <p>hello good evening how are you ???</p>
+    <button>Click</button>
+  </body>
+
+  <script>
+    const handleMessageFn = () => {
+      document.querySelector('p').innerText =
+        'hey good night, go to sleep now!!!';
+    };
+
+    const initalTimeoutRef = setTimeout(handleMessageFn, 2000);
+
+    document.querySelector('button').addEventListener('click', () => {
+      clearTimeout(initalTimeoutRef); //clearTimeout is basically used to clear the setTimeout by passing the referce of that particular timesout as an argument
+    });
+  </script>
+</html>

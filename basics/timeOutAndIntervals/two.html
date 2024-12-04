@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using SetInterval</title>
+  </head>
+  <body>
+    <p>
+      Let us use set interval to print date, time and stop printing date, time
+      when required
+    </p>
+
+    <button id="startBtn">start</button>
+    <button id="stopBtn">stop</button>
+    <p id="dateAndTime"></p>
+  </body>
+
+  <script>
+    const dateAndTime = document.getElementById('dateAndTime');
+    const printDateTime = (thirdParam) => {
+      console.log('third param recieved is >>>', thirdParam); //here im recieving that third parameter which was pass in setInterval
+
+      const date = new Date();
+      const dateWithTime = date.toLocaleTimeString();
+      dateAndTime.innerText = dateWithTime;
+    };
+
+    let intervalRef;
+    document.getElementById('startBtn').addEventListener('click', () => {
+      intervalRef = setInterval(
+        //setInterval returns undefined
+        printDateTime,
+        1000,
+        'third parameter of setinterval'
+      );
+    });
+
+    document.getElementById('stopBtn').addEventListener('click', () => {
+      clearInterval(intervalRef);
+    }); //leanrn about timeOutId that is returned by setTimeout/setInterval
+  </script>
+</html>
