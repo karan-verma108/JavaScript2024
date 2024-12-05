@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Continuos color generator</title>
+  </head>
+  <body>
+    <h1>
+      Use the buttons below to generate and stop random colors for this page
+    </h1>
+
+    <button id="startButton" type="button">Start</button>
+    <button id="stopButton" type="button">Stop</button>
+  </body>
+
+  <script>
+    const startButton = document.getElementById('startButton');
+    const stopButton = document.getElementById('stopButton');
+
+    let colorInterval;
+
+    const generateRandomColors = () => {
+      const red = Math.round(Math.random() * 255) + 1;
+      const green = Math.round(Math.random() * 100) + 1;
+      const blue = Math.round(Math.random() * 150) + 1;
+      document.body.style.backgroundColor = `rgb(${red},${green},${blue})`;
+    };
+
+    const startChangingColor = () => {
+      if (!colorInterval) {
+        //setting the background color of body only when the color interval reference is null/empty, (this is important as to not store more than one interval Id for the same interval reference)
+        colorInterval = setInterval(generateRandomColors, 1000);
+      }
+    };
+
+    const stopChangingColor = () => {
+      clearInterval(colorInterval);
+      colorInterval = null; //clearing the color interval reference (here we are setting the color interval reference/id to null)
+    };
+
+    startButton.addEventListener('click', startChangingColor);
+    stopButton.addEventListener('click', stopChangingColor);
+  </script>
+</html>
