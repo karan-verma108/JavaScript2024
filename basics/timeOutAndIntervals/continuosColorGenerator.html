@@ -18,13 +18,44 @@
     const startButton = document.getElementById('startButton');
     const stopButton = document.getElementById('stopButton');
 
+    const hexCodeArr = [
+      'A',
+      'B',
+      'C',
+      'D',
+      'E',
+      'F',
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+    ];
+
     let colorInterval;
 
     const generateRandomColors = () => {
+      //using hexcode
+      let randomHexCodeColor = '#';
+      for (let i = 0; i < 6; i++) {
+        randomHexCodeColor +=
+          hexCodeArr[Math.round(Math.random() * hexCodeArr.length)];
+      }
+
+      //using rgb colors
       const red = Math.round(Math.random() * 255) + 1;
       const green = Math.round(Math.random() * 100) + 1;
       const blue = Math.round(Math.random() * 150) + 1;
-      document.body.style.backgroundColor = `rgb(${red},${green},${blue})`;
+      const randomRGBColor = `rgb(${red},${green},${blue})`;
+      document.body.style.backgroundColor = randomRGBColor; //using rgb
+      // document.body.style.backgroundColor = randomHexCodeColor; //using hex code color
+      console.log('rgb', randomRGBColor);
+      console.log('hex code', randomHexCodeColor);
     };
 
     const startChangingColor = () => {
