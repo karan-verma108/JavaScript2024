@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XML HTTP Request</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>We're using XML HTTP Request to fetch data here</h1>
+    <h2>
+      Enter a github user url below and hit the button to fetch their data
+    </h2>
+    <p id="helperPara">Enter your ursername after <span>https://api.github.com/users/</span></p>
+    <form>
+      <input
+        type="text"
+        placeholder="https://api.github.com/users/userName"
+        id="userName"
+        value="https://api.github.com/users/"
+        name="userName"
+      />
+      <button type="submit">Hit the request</button>
+    </form>
+    <div></div>
+  </body>
+  <script src="./script.js"></script>
+</html>
