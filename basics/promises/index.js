@@ -114,15 +114,48 @@ getUsersData(); */
 
 // type 6 using .then and .catch (fetching a data from url | dealing with promise )
 
-fetch('apiUrl')
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    data.map((currentItem) => {
-      console.log('currentItem name is : ', currentItem.name);
-    });
+// fetch('apiUrl')
+//   .then((response) => {
+//     return response.json();
+//   })
+//   .then((data) => {
+//     data.map((currentItem) => {
+//       console.log('currentItem name is : ', currentItem.name);
+//     });
+//   })
+//   .catch((err) => {
+//     console.log('Error : ', err);
+//   });
+
+/* A promise is badically an object in javascrip that represents an eventual completion (or failure) of an asynchronous task and its resulting value
+
+A promise has three states:
+a) pending -> neither fulfilled or rejected
+b) fulfilled -> meaning that the operation was succesfully completed
+c) rejected -> meaning that the operation failed
+*/
+
+const promise1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log('Promise 1 is resolved');
+    resolve();
+  }, 2000);
+});
+
+promise1.then(() => {
+  console.log('First async task is done');
+});
+
+new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log('promise 2 is resolved');
+    // resolve();
+    reject(new Error('Promise 2 was not resolved'));
+  }, 3000);
+})
+  .then(() => {
+    console.log('Second async task is done');
   })
   .catch((err) => {
-    console.log('Error : ', err);
+    console.log('The request was not fulfilled', err);
   });
