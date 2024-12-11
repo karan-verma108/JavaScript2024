@@ -135,27 +135,98 @@ b) fulfilled -> meaning that the operation was succesfully completed
 c) rejected -> meaning that the operation failed
 */
 
-const promise1 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    console.log('Promise 1 is resolved');
-    resolve();
-  }, 2000);
-});
+// const promise1 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     console.log('Promise 1 is resolved');
+//     resolve();
+//   }, 2000);
+// });
 
-promise1.then(() => {
-  console.log('First async task is done');
-});
+// promise1.then(() => {
+//   console.log('First async task is done');
+// });
 
-new Promise((resolve, reject) => {
-  setTimeout(() => {
-    console.log('promise 2 is resolved');
-    // resolve();
-    reject(new Error('Promise 2 was not resolved'));
-  }, 3000);
-})
-  .then(() => {
-    console.log('Second async task is done');
+// new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     console.log('promise 2 is resolved');
+//     // resolve();
+//     reject(new Error('Promise 2 was not resolved'));
+//   }, 3000);
+// })
+//   .then(() => {
+//     console.log('Second async task is done');
+//   })
+//   .catch((err) => {
+//     console.log('The request was not fulfilled', err);
+//   });
+
+// new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     console.log('Promise is resolved');
+//     resolve({ userName: 'roy', age: 30 });
+//   }, 2000);
+// })
+//   .then((data) => {
+//     console.log('response recieved', data);
+//   })
+//   .catch((err) => {
+//     console.log('err', err);
+//   });
+
+// new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     const error = false;
+//     if (!error) {
+//       resolve({ data: ['spiderman', 'batman', 'john cena'] });
+//     } else {
+//       reject('Error fetching the data, sorry');
+//     }
+//   }, 2000);
+// })
+//   .then((data) => {
+//     console.log('data fetched from the server is', data);
+//   })
+//   .catch((err) => console.log(err))
+//   .finally(() => console.log('The promise is either resolved or rejected')); //finallly can be used for tasks like code cleanup, freeing resources or giving message that regardless of resolve or reject, the code is now executed
+
+// const newPromise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     const error = true;
+//     if (!error) {
+//       resolve({ listOfStars: [1, 2, 3, 4] });
+//     } else {
+//       reject('Promise request failed');
+//     }
+//   }, 2000);
+// });
+
+// async function consumeNewPromise() {
+//   try {
+//     const response = await newPromise;
+//     console.log('res', response);
+//   } catch (error) {
+//     console.log('Error recieved is', error);
+//   }
+// }
+
+// consumeNewPromise();
+
+const fetchUserData = async () => {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/users');
+    const data = await response.json();
+    console.log('data', data);
+  } catch (error) {
+    console.log('err', error);
+  }
+};
+
+// fetchUserData();
+
+fetch('https://jsonplaceholder.typicode.com/users')
+  .then((res) => res.json())
+  .then((data) => {
+    console.log('data', data);
   })
-  .catch((err) => {
-    console.log('The request was not fulfilled', err);
-  });
+  .catch((err) => console.log('error', err))
+  .finally(() => console.log('Code is executed'));
