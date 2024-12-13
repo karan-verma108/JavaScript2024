@@ -211,22 +211,33 @@ c) rejected -> meaning that the operation failed
 
 // consumeNewPromise();
 
-const fetchUserData = async () => {
-  try {
-    const response = await fetch('https://jsonplaceholder.typicode.com/users');
-    const data = await response.json();
-    console.log('data', data);
-  } catch (error) {
-    console.log('err', error);
-  }
-};
+// const fetchUserData = async () => {
+//   try {
+//     const response = await fetch('https://jsonplaceholder.typicode.com/users');
+//     const data = await response.json();
+//     console.log('data', data);
+//   } catch (error) {
+//     console.log('err', error);
+//   }
+// };
 
-// fetchUserData();
+// // fetchUserData();
 
-fetch('https://jsonplaceholder.typicode.com/users')
-  .then((res) => res.json())
-  .then((data) => {
-    console.log('data', data);
-  })
-  .catch((err) => console.log('error', err))
-  .finally(() => console.log('Code is executed'));
+// fetch('https://jsonplaceholder.typicode.com/users')
+//   .then((res) => res.json())
+//   .then((data) => {
+//     console.log('data', data);
+//   })
+//   .catch((err) => console.log('error', err))
+//   .finally(() => console.log('Code is executed'));
+
+// #about fetch() API
+
+/*as we know about js engine, it has two things in it, memory heap & call stack. The call stack follow LIFO algorithm to solve / run currently in-call requests/processes 
+So for normal synchronous tasks, it goes like this. When we encounter asynchronous tasks like setTimeOut() or setInterval(), when either of these methods are called, they register a new call back which means whenever they are completed/resolved they get added to a new list which is called as task queue that runs on the principles of FIFO so the moment a task gets removed from this task queuce, it gets added at the very top of the call stack. Now, about the fetch() API, when it's called, it goes of the call stack and has its own call back and when it's finally resolved, suppose we had made three fetch() requests, all these (as per their order of completion, get added to a new queue called, Micro task queue, Priority queue, or simply Fetch queue. This queue also follows the FIFO algorithm. Most notably, this very queue has higher priority than the normal task queue. So if there is a task from the task queue getting completed, and a fetch() request is completed at the same time, in that case, the fetch request task will be given high priority and added to the call stack for it to get executed there eventually. )
+
+IMPORTANT :
+
+even when we receive errors like 404 or any other status code, it doesn't mean our request was rejected. It's coming as a response.
+A request is rejected in scenarios like CORS errors or network errors
+*/
