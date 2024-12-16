@@ -241,3 +241,79 @@ IMPORTANT :
 even when we receive errors like 404 or any other status code, it doesn't mean our request was rejected. It's coming as a response.
 A request is rejected in scenarios like CORS errors or network errors
 */
+
+// two ways of handling promises
+// i) using .then , .catch & .finally
+
+// function addNumbers(a, b) {
+//   return a + b;
+// }
+
+// const result = addNumbers(4, 2);
+// // console.log('result', result);
+
+// new Promise(function (resolve, reject) {
+//   setTimeout(function () {
+//     const error = true;
+//     if (error) {
+//       reject('Im a very big error');
+//       console.log('Request is rejected');
+//     } else {
+//       resolve({ name: 'SRK' });
+//       console.log('Request is resolved');
+//     }
+//   }, 2000); //1000ms = 1 sec
+// })
+//   .then((response) => console.log('response', response)) //resolve ki output
+//   .catch((error) => console.log('error is', error)); //reject ki output
+
+// const response = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     const error = true;
+//     if (error) {
+//       reject('Le meine error pass krdiya');
+//     } else {
+//       resolve('Hellow, it is resolved');
+//     }
+//   }, 2000);
+// });
+
+// response
+//   .then((res) => console.log('res', res))
+//   .catch((err) => console.log('err', err))
+//   .finally(() => console.log('Resouces freed'));
+
+// fetch('https://jsonplaceholder.typicode.com/users')
+//   .then((res) => res.json())
+//   .then((data) => console.log('data', data))
+//   .catch((err) => console.log('api ka err', err));
+
+const promiseTwo = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve({ name: 'Karan', age: 40 });
+  }, 1000);
+});
+
+//first way using .then .catch
+// promiseTwo
+//   .then((res) => console.log('res', res))
+//   .catch((err) => console.log('err', err));
+
+const handlePromiseTwo = async () => {
+  try {
+    const res = await promiseTwo;
+    return res;
+  } catch (error) {
+    console.log('err', error);
+  }
+};
+
+const fnResult = handlePromiseTwo();
+console.log('fn result', fnResult);
+
+// function addNumbers(a, b) {
+//  return a + b;
+// }
+
+// const result = addNumbers(3, 4);
+// console.log('result', result);
