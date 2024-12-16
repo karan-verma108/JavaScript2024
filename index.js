@@ -94,4 +94,13 @@ function x() {
 x();
 // console.log(a);
 
+console.log(typeof typeof Function); //string
 
+function abc() {
+  console.log(abc.xyz);
+}
+
+abc(); //undefined
+abc.xyz = 400;
+abc.xyz = 200;
+abc(); //200
