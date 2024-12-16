@@ -21,8 +21,8 @@ function user(username, profession, isLoggedIn) {
 
 //lets create a new instance to overcome this issue
 
-const user1 = new user('karan', 'developer', true);
-const user2 = new user('roy', 'designer', true);
+const user1 = new user('karan', 'developer', true); //here we're creating a new instance of the object user
+const user2 = new user('roy', 'designer', true); //here as well
 
 console.log(user1);
 console.log(user2);
