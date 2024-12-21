@@ -60,3 +60,17 @@ const myFun = () => {
 // console.log(typeof arr);
 // console.log(typeof obj);
 // console.log(typeof myFun);
+
+// function abc() {
+//   console.log(abc.xyz);
+// }
+
+// abc();
+// abc.xyz = 400;
+// abc.xyz = 200;
+// abc();
+
+// const numArr = [1, 2, 3, 4];
+
+// numArr[100] = 400;
+// console.log(numArr);
