@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React (Bind)</title>
+  </head>
+  <body>
+    <button>Button</button>
+  </body>
+  <script>
+    class React {
+      constructor() {
+        this.library = 'react';
+        this.server = 'http/:localhost/3000';
+
+        document
+          .querySelector('button')
+          //   .addEventListener('click', this.handleClick); //right now the context of this handleClick is the button element, but we need the context of the reactInstance
+          //   .addEventListener('click', this.handleClick.bind(this)); //now the context is of the reactInstance
+          .addEventListener('click', () => this.handleClick()); //we can do it with using arrow function, without the need of bind()
+      }
+
+      //as button is clicked, the handleClick should get triggered
+
+      handleClick() {
+        console.log('Button clicked');
+        console.log(this.server);
+      }
+    }
+
+    const reactInstance = new React();
+  </script>
+</html>
