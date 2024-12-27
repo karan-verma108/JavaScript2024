@@ -45,5 +45,42 @@ const regularUser = {
 // console.log(regularUser.hasOwnProperty('email')); //it checks if email property exists in the regularUser object
 
 const { email: myPersonalEmail, password: myPersonalPassword } = regularUser; //this is one way to give a different name to the destructed item
-console.log(myPersonalEmail);
-console.log(myPersonalPassword);
+// console.log(myPersonalEmail);
+// console.log(myPersonalPassword);
+
+const obj = {
+  name: 'roy',
+  age: 42,
+  income: 'nice',
+};
+
+// for (item in obj) { for in loop can be applied to object
+//   console.log(item);
+// }
+
+// for (let [key, value] of Object.entries(obj)) {
+//   //this way we can use for of loop to iterate over objects
+//   console.log(`${key}, ${value}`);
+// }
+
+// console.log(Object.getOwnPropertyDescriptor(obj, 'name'));
+
+// console.log(
+//   Object.defineProperty(obj, 'name', {
+//     enumerable: false,
+//   })
+// );
+
+// for (let value of obj.name) {
+//   console.log('value', value); //so we can still access the name property and loop through it but when accessing or looping throught the entire object, in that case, the 'name' property will be excluded (hidden)
+// }
+
+// console.log((obj.name = 'karan')); //doesn't override the name property now
+
+console.log(Math.PI);
+Object.defineProperty(Math, 'PI', {
+  writable: true,
+  configurable: true,
+});
+
+console.log(Object.getOwnPropertyDescriptor(Math, 'PI')); //cannot redine Math.PI property
