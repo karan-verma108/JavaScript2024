@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lexical Scope & Closure</title>
+  </head>
+  <body style="background-color: black">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+  </body>
+  <script>
+    /* 1) lexical scope
+        function init() {
+          let name = 'Roy';
+          function displayName() {
+            let age = 43;
+            console.log(name); //we are able to access this variable named 'name' inside the displayName() function because of lexical scoping
+          }
+
+          function displayAge() {
+            //let's try with age
+            console.log('age', age); //it doesn't work because the scope of age variable is only inside the displayName() function
+          }
+          displayName();
+          displayAge();
+        }
+        // init();
+        //lexical scope is the ability for a function to access variables from its parent scope. We call such reciepients lexically bound functions.
+        */
+
+    // 2) closure -> in closure, basically it's a similar situation like that of lexical scope, you have a main function and a child function, which has access to the parent function's properties/methods,
+    // but this time, you don't invoke the child function inside the body of the parent function, but rather, you just return the child function. Yes you return its scope or I should say the lexical scope the inner function. So when you call the parent function and store the returned value (which in this case is the lexical reference to the inner function) to a variable, let's say 'innerFnResult' and when you invoke this 'innerFnResult', you get the value returned/consoled by the child function.
+
+    // Now, as per the rules, as soon as the main function was invoked, its function execution should get destroyed and all of its body content should also not be accessible, right? Yes that's right technically and by all means, However then how are we able to access a variable defined in the main function, inside the child function when it's called after the main function has been invoked. It's due to the fact that we returned the lexical scope of the child function  (the child function forms a closure over its lexical scope), which also entails the properties/methods of its lexical enviornment which is nothing but its parent and hence, despite the main function's execution context been destroyed, it still shares memory with the child function, thus allowing access to its properties/methods to the child function due to lexical scoping. This concept is called closure.
+
+    function makeFunc() {
+      const name = 'Mozilla';
+      function displayName() {
+        console.log(name);
+      }
+      return displayName;
+    }
+
+    const myFunc = makeFunc();
+    // myFunc();
+
+    function changeColor(color) {
+      return function () {
+        //here we are returning another function which is bascially an anonymous function that's changing the background color
+        document.body.style.backgroundColor = color;
+      };
+    }
+
+    /*document.getElementById('orange').onclick = () => {
+      //here we are basically passing the reference of the changeColor function, because if not, then the function would be called immedietely without even the click event happening
+      changeColor('orange');
+    };
+    document.getElementById('green').onclick = () => {
+      //here we are basically passing the reference of the changeColor function, because if not, then the function would be called immedietely without even the click event happening
+      changeColor('green');
+    }; */
+
+    /* we can write it using regular function as well
+
+    document.getElementById('orange').onclick = function () {
+      changeColor('orange');
+    };
+
+    document.getElementById('green').onclick = function () {
+      changeColor('green');
+    }; */
+
+    // now let's try to use closure here
+
+    document.getElementById('orange').onclick = changeColor('orange'); //so basically here, the changeColor function been called immeditely as soon as the javascript loaded on the browser, and you might think how did it change the color to orange when clicked on the orange button, it's because of closure as changeColor returns another function that's anonymous and it remembers the variable 'color' of its parent (changeColor) function and it's called when the click event takes place
+    document.getElementById('green').onclick = changeColor('green');
+  </script>
+</html>
