@@ -44,8 +44,10 @@ class Solution {
 }
 
 const firstSolution = new Solution();
-console.log(firstSolution.missingNumber([2, 3]));
+// console.log(firstSolution.missingNumber([2, 3]));
 const secondSolution = new Solution();
 // console.log(secondSolution.missingNumber([8, 2, 4, 5, 3, 7, 1]));
 const thirdSolution = new Solution();
 // console.log(thirdSolution.missingNumber([1]));
+
+console.log(new Array(3).fill(4)); //the 3 is the length here and inside fill is '4' which means fill all the array positions with 4 element
